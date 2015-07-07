@@ -1,0 +1,27 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Nimbus Sans L';
+}
+
+body {
+	width: 300px;
+	height: 500px;
+}
+
+#messageContainer {
+	overflow-y: scroll;
+	border-top: 3px solid #6441A5;
+    background-color: #F2F2F2;
+    height: 100%;
+    width: 100%;
+}
+
+.user{
+	display: inline-block;
+}
+
+.message {
+	margin: 2px;
+	display: inline-block;
+}
