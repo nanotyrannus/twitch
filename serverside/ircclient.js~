@@ -1,5 +1,5 @@
 var irc = require('irc');
-var twitchClient = new irc.Client('irc.twitch.tv', 'shinpiplup', {
+var client = new irc.Client('irc.twitch.tv', 'shinpiplup', {
   "channels" : ['#tsm_dyrus', '#tsm_bjergsen', '#esea', '#tsm_santorin'],
   "password" : "oauth:vcna25phbdqya03v8om3f5evnglh5x"
 });
@@ -17,18 +17,18 @@ wss.on("connection", function connection(ws){
   appClients.push(ws);
 });
 
-twitchClient.addListener('error', function(message){
+client.addListener('error', function(message){
   console.error(message);
 });
 
-twitchClient.addListener('join', function(channel, nick, message){
+client.addListener('join', function(channel, nick, message){
   console.log("joined: ", channel, nick, message);
   // console.log(channel);
   // console.log(nick);
   // console.log(message);
 });
 
-twitchClient.addListener('message', function(user, channel, message){
+client.addListener('message', function(user, channel, message){
   var msgObj = {
     "user" : user,
     "ch" : channel,
