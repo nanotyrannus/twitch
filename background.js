@@ -10,7 +10,10 @@ ws.addEventListener("message", function(message){
   } else {
   	recentMessages.push(message);
   }
+  
 });
+
+
 
 //Begin connection by sending list of channels
 if(chrome.storage.sync.get("subscribed", function(){})){
